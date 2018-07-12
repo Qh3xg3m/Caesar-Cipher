@@ -1,11 +1,5 @@
-print('''
-Select pls!
-1.Encrypt
-2.Decrypt''')
-select = int(input('Your select: '))
 def encrypt(k):
 	list_str = []
-	text = str(input('Input = ').lower())
 	for i in range(len(text)):
 		list_str.append(chr(ord(text[i])+k))
 	encrypted = ''.join(list_str)
@@ -19,12 +13,21 @@ The chr() returns a character (a string) whose
 '''
 def decrypt(k):
 	list_str = []
-	for i in range(len(encrypted)):
-		list_str.append(chr(ord(encrypted[i])-k))
+	for i in range(len(text)):
+		list_str.append(chr(ord(text[i])-k))
 	decrypted = ''.join(list_str)
 	print('Decrypt successfully!')
 	print(decrypted)
+
+print('''
+Select pls!
+1.Encrypt
+2.Decrypt''')
+print()
+select = int(input('Your select: '))
+text = str(input('Input = ').lower())
 k = int(input('Key = '))
+print()
 if select == 1:
 	encrypt(k)
 elif select == 2:
